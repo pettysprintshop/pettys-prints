@@ -67,10 +67,13 @@
       padding: 22px 20px;
       margin-bottom: 16px;
       box-shadow: 0 8px 25px rgba(255, 79, 145, 0.12);
-      transition: 0.2s ease;
     }
 
-    .link-card:hover {
+    a.link-card {
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    a.link-card:hover {
       transform: translateY(-2px);
       box-shadow: 0 10px 30px rgba(255, 79, 145, 0.25);
     }
@@ -93,14 +96,64 @@
       margin-bottom: 15px;
     }
 
+    .payment-option {
+      margin-top: 18px;
+    }
+
+    .payment-option + .payment-option {
+      border-top: 1px solid #f0d5e0;
+      padding-top: 20px;
+      margin-top: 20px;
+    }
+
+    .payment-methods {
+      color: #222;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1.5;
+      margin-bottom: 4px;
+    }
+
+    .payment-note {
+      color: #555;
+      font-size: 13px;
+      line-height: 1.5;
+      margin-bottom: 10px;
+    }
+
     .button {
+      display: block;
       background: #111;
       color: white;
+      text-decoration: none;
       border-radius: 10px;
       padding: 13px 15px;
       font-size: 13px;
       font-weight: 900;
       letter-spacing: 0.5px;
+      line-height: 1.4;
+    }
+
+    a.button {
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    a.button:hover {
+      background: #333;
+      transform: translateY(-1px);
+    }
+
+    .square-button {
+      background: #ff3f83;
+    }
+
+    a.square-button:hover {
+      background: #db2466;
+    }
+
+    a:focus-visible {
+      outline: 3px solid #ff79a8;
+      outline-offset: 4px;
     }
 
     .points-card {
@@ -140,7 +193,7 @@
       padding: 10px 17px;
       font-size: 13px;
       font-weight: 700;
-      transition: 0.2s ease;
+      transition: border-color 0.2s ease, color 0.2s ease;
     }
 
     .socials a:hover {
@@ -158,6 +211,29 @@
     .footer strong {
       color: #ff4f91;
     }
+
+    @media (max-width: 380px) {
+      h1 {
+        font-size: 35px;
+      }
+
+      .link-card {
+        padding: 20px 16px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      a.link-card,
+      a.button,
+      .socials a {
+        transition: none;
+      }
+
+      a.link-card:hover,
+      a.button:hover {
+        transform: none;
+      }
+    }
   </style>
 </head>
 
@@ -165,7 +241,7 @@
 
   <main class="page">
 
-    <div class="heart">💗</div>
+    <div class="heart" aria-hidden="true">💗</div>
 
     <h1>Petty's Prints</h1>
 
@@ -181,29 +257,62 @@
 
     <!-- PLACE AN ORDER -->
 
-    <a
-      class="link-card"
-      href="https://form.jotform.com/261445386197063"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
+    <section class="link-card" aria-labelledby="order-title">
 
-      <div class="icon">🛍️</div>
+      <div class="icon" aria-hidden="true">🛍️</div>
 
-      <div class="link-title">
+      <h2 class="link-title" id="order-title">
         Place an Order
-      </div>
+      </h2>
 
-      <div class="link-description">
+      <p class="link-description">
         Ready to make something petty?
-        Start your Petty's Prints order here.
+        Choose how you'd like to pay below.
+      </p>
+
+      <div class="payment-option">
+
+        <p class="payment-methods">
+          Venmo, Cash App, PayPal, or Apple Pay
+        </p>
+
+        <p class="payment-note">
+          Please order through Jotform.
+        </p>
+
+        <a
+          class="button"
+          href="https://form.jotform.com/261445386197063"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          ORDER WITH JOTFORM
+        </a>
+
       </div>
 
-      <div class="button">
-        START MY ORDER
+      <div class="payment-option">
+
+        <p class="payment-methods">
+          Credit or debit card
+        </p>
+
+        <p class="payment-note">
+          Please shop through Square.
+        </p>
+
+        <a
+          class="button square-button"
+          href="https://pettys-prints.square.site"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          SHOP WITH SQUARE
+        </a>
+
       </div>
 
-    </a>
+    </section>
 
 
     <!-- PETTY POINTS -->
@@ -215,17 +324,17 @@
       rel="noopener noreferrer"
     >
 
-      <div class="icon">💗</div>
+      <div class="icon" aria-hidden="true">💗</div>
 
-      <div class="link-title">
+      <h2 class="link-title">
         Petty Points
-      </div>
+      </h2>
 
-      <div class="link-description">
+      <p class="link-description">
         Check your Petty Points balance,
         create rewards, and enjoy the perks
         of being petty.
-      </div>
+      </p>
 
       <div class="button">
         CHECK MY PETTY POINTS
@@ -242,7 +351,7 @@
       Keep Up With Petty's Prints
     </div>
 
-    <div class="socials">
+    <nav class="socials" aria-label="Social media and Etsy">
 
       <a
         href="https://www.instagram.com/pettys.prints/"
@@ -276,12 +385,12 @@
         Etsy
       </a>
 
-    </div>
+    </nav>
 
 
     <!-- FOOTER -->
 
-    <div class="footer">
+    <footer class="footer">
 
       <strong>
         Being petty has its perks. 💗
@@ -291,7 +400,7 @@
 
       Petty's Prints
 
-    </div>
+    </footer>
 
   </main>
 
