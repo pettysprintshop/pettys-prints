@@ -1,10 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Petty's Prints</title>
+  <title>Petty's Prints | Shop & Rewards</title>
 
   <style>
     * {
@@ -67,15 +68,12 @@
       padding: 22px 20px;
       margin-bottom: 16px;
       box-shadow: 0 8px 25px rgba(255, 79, 145, 0.12);
-    }
-
-    a.link-card {
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      transition: transform .2s ease, box-shadow .2s ease;
     }
 
     a.link-card:hover {
       transform: translateY(-2px);
-      box-shadow: 0 10px 30px rgba(255, 79, 145, 0.25);
+      box-shadow: 0 10px 30px rgba(255, 79, 145, .25);
     }
 
     .icon {
@@ -92,68 +90,26 @@
     .link-description {
       font-size: 13px;
       color: #555;
-      line-height: 1.45;
+      line-height: 1.5;
       margin-bottom: 15px;
-    }
-
-    .payment-option {
-      margin-top: 18px;
-    }
-
-    .payment-option + .payment-option {
-      border-top: 1px solid #f0d5e0;
-      padding-top: 20px;
-      margin-top: 20px;
-    }
-
-    .payment-methods {
-      color: #222;
-      font-size: 14px;
-      font-weight: 700;
-      line-height: 1.5;
-      margin-bottom: 4px;
-    }
-
-    .payment-note {
-      color: #555;
-      font-size: 13px;
-      line-height: 1.5;
-      margin-bottom: 10px;
     }
 
     .button {
       display: block;
-      background: #111;
+      background: #ff3f83;
       color: white;
       text-decoration: none;
       border-radius: 10px;
-      padding: 13px 15px;
-      font-size: 13px;
+      padding: 14px 15px;
+      font-size: 14px;
       font-weight: 900;
-      letter-spacing: 0.5px;
+      letter-spacing: .5px;
       line-height: 1.4;
+      transition: background .2s ease;
     }
 
-    a.button {
-      transition: background 0.2s ease, transform 0.2s ease;
-    }
-
-    a.button:hover {
-      background: #333;
-      transform: translateY(-1px);
-    }
-
-    .square-button {
-      background: #ff3f83;
-    }
-
-    a.square-button:hover {
+    a.link-card:hover .button {
       background: #db2466;
-    }
-
-    a:focus-visible {
-      outline: 3px solid #ff79a8;
-      outline-offset: 4px;
     }
 
     .points-card {
@@ -161,7 +117,16 @@
     }
 
     .points-card .button {
-      background: #ff3f83;
+      background: #111;
+    }
+
+    a.points-card:hover .button {
+      background: #333;
+    }
+
+    a:focus-visible {
+      outline: 3px solid #ff79a8;
+      outline-offset: 4px;
     }
 
     .divider {
@@ -193,7 +158,7 @@
       padding: 10px 17px;
       font-size: 13px;
       font-weight: 700;
-      transition: border-color 0.2s ease, color 0.2s ease;
+      transition: border-color .2s ease, color .2s ease;
     }
 
     .socials a:hover {
@@ -213,24 +178,18 @@
     }
 
     @media (max-width: 380px) {
-      h1 {
-        font-size: 35px;
-      }
-
-      .link-card {
-        padding: 20px 16px;
-      }
+      h1 { font-size: 35px; }
+      .link-card { padding: 20px 16px; }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      a.link-card,
-      a.button,
+      .link-card,
+      .button,
       .socials a {
         transition: none;
       }
 
-      a.link-card:hover,
-      a.button:hover {
+      a.link-card:hover {
         transform: none;
       }
     }
@@ -254,66 +213,32 @@
       and a whole lot of petty. 💕
     </p>
 
+    <!-- SHOP WITH SQUARE -->
 
-    <!-- PLACE AN ORDER -->
-
-    <section class="link-card" aria-labelledby="order-title">
+    <a
+      class="link-card"
+      href="https://pettys-prints.square.site"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
 
       <div class="icon" aria-hidden="true">🛍️</div>
 
-      <h2 class="link-title" id="order-title">
-        Place an Order
+      <h2 class="link-title">
+        Shop Petty's Prints
       </h2>
 
       <p class="link-description">
-        Ready to make something petty?
-        Choose how you'd like to pay below.
+        Shop custom shirts, decals, gifts, and more!
+        Browse our products and place your order
+        securely through our online store.
       </p>
 
-      <div class="payment-option">
-
-        <p class="payment-methods">
-          Venmo, Cash App, PayPal, or Apple Pay
-        </p>
-
-        <p class="payment-note">
-          Please order through Jotform.
-        </p>
-
-        <a
-          class="button"
-          href="https://form.jotform.com/261445386197063"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          ORDER WITH JOTFORM
-        </a>
-
+      <div class="button">
+        SHOP NOW
       </div>
 
-      <div class="payment-option">
-
-        <p class="payment-methods">
-          Credit or debit card
-        </p>
-
-        <p class="payment-note">
-          Please shop through Square.
-        </p>
-
-        <a
-          class="button square-button"
-          href="https://pettys-prints.square.site"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          SHOP WITH SQUARE
-        </a>
-
-      </div>
-
-    </section>
-
+    </a>
 
     <!-- PETTY POINTS -->
 
@@ -327,12 +252,12 @@
       <div class="icon" aria-hidden="true">💗</div>
 
       <h2 class="link-title">
-        Petty Points
+        Petty Points Rewards
       </h2>
 
       <p class="link-description">
         Check your Petty Points balance,
-        create rewards, and enjoy the perks
+        request rewards, and enjoy the perks
         of being petty.
       </p>
 
@@ -341,7 +266,6 @@
       </div>
 
     </a>
-
 
     <!-- SOCIAL LINKS -->
 
@@ -386,7 +310,6 @@
       </a>
 
     </nav>
-
 
     <!-- FOOTER -->
 
