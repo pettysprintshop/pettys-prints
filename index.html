@@ -166,20 +166,72 @@
       color: #ff79a8;
     }
 
-    /* CUSTOMER REVIEWS */
+    /* ETSY CUSTOMER REVIEWS */
 
     .reviews {
-      margin: 38px auto 0;
-      width: 100%;
-      max-width: 480px;
-      text-align: center;
+      margin-top: 42px;
     }
 
-    .reviews img {
-      display: block;
-      width: 100%;
-      height: auto;
-      border-radius: 12px;
+    .reviews-heading {
+      font-size: 19px;
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+
+    .reviews-subtitle {
+      color: #aaa;
+      font-size: 12px;
+      margin-bottom: 20px;
+    }
+
+    .review-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .review-card {
+      background: #1c171b;
+      border: 1px solid #48313c;
+      border-radius: 14px;
+      padding: 18px 14px;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .review-stars {
+      color: #ff79a8;
+      font-size: 17px;
+      letter-spacing: 2px;
+    }
+
+    .review-quote {
+      color: #f3f3f3;
+      font-size: 13px;
+      line-height: 1.6;
+      flex: 1;
+      overflow-wrap: anywhere;
+    }
+
+    .review-name {
+      color: #bdb0b7;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .review-link {
+      display: inline-block;
+      color: #ff79a8;
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+      margin-top: 20px;
+    }
+
+    .review-link:hover {
+      text-decoration: underline;
     }
 
     .footer {
@@ -193,9 +245,18 @@
       color: #ff4f91;
     }
 
-    @media (max-width: 380px) {
-      h1 { font-size: 35px; }
-      .link-card { padding: 20px 16px; }
+    @media (max-width: 420px) {
+      h1 {
+        font-size: 35px;
+      }
+
+      .link-card {
+        padding: 20px 16px;
+      }
+
+      .review-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -237,7 +298,6 @@
       target="_blank"
       rel="noopener noreferrer"
     >
-
       <div class="icon" aria-hidden="true">🛍️</div>
 
       <h2 class="link-title">
@@ -253,7 +313,6 @@
       <div class="button">
         SHOP NOW
       </div>
-
     </a>
 
     <!-- PETTY POINTS -->
@@ -264,7 +323,6 @@
       target="_blank"
       rel="noopener noreferrer"
     >
-
       <div class="icon" aria-hidden="true">💗</div>
 
       <h2 class="link-title">
@@ -280,7 +338,6 @@
       <div class="button">
         CHECK MY PETTY POINTS
       </div>
-
     </a>
 
     <!-- SOCIAL LINKS -->
@@ -292,63 +349,113 @@
     </div>
 
     <nav class="socials" aria-label="Social media and Etsy">
-
       <a
         href="https://www.instagram.com/pettys.prints/"
         target="_blank"
         rel="noopener noreferrer"
-      >
-        Instagram
-      </a>
+      >Instagram</a>
 
       <a
         href="https://www.facebook.com/share/1EcG4Vogq3/?mibextid=wwXIfr"
         target="_blank"
         rel="noopener noreferrer"
-      >
-        Facebook
-      </a>
+      >Facebook</a>
 
       <a
         href="https://www.tiktok.com/@pettys.prints?_r=1&amp;_t=ZT-9A1uV992W5u"
         target="_blank"
         rel="noopener noreferrer"
-      >
-        TikTok
-      </a>
+      >TikTok</a>
 
       <a
         href="https://pettysprintshop.etsy.com"
         target="_blank"
         rel="noopener noreferrer"
-      >
-        Etsy
-      </a>
-
+      >Etsy</a>
     </nav>
 
-    <!-- ETSY CUSTOMER REVIEWS -->
+    <!-- CUSTOMER REVIEWS -->
 
-    <section class="reviews" aria-label="Etsy customer reviews">
-      <img
-        src="etsy-reviews.png"
-        alt="Petty's Prints customer reviews from Etsy"
-        loading="lazy"
+    <section class="reviews" aria-labelledby="reviews-title">
+
+      <div class="divider"></div>
+
+      <h2 class="reviews-heading" id="reviews-title">
+        What Our Customers Are Saying 💗
+      </h2>
+
+      <p class="reviews-subtitle">
+        Real reviews from our Etsy customers
+      </p>
+
+      <div class="review-grid">
+
+        <article class="review-card">
+          <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p class="review-quote">
+            "So unique and absolutely perfect!"
+          </p>
+          <div class="review-name">— Jessica</div>
+        </article>
+
+        <article class="review-card">
+          <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p class="review-quote">
+            "Highly recommend, I love this sticker!"
+          </p>
+          <div class="review-name">— Hazel</div>
+        </article>
+
+        <article class="review-card">
+          <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p class="review-quote">
+            "Finding this sticker made my day."
+          </p>
+          <div class="review-name">— Erin</div>
+        </article>
+
+        <article class="review-card">
+          <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p class="review-quote">
+            "Love! So cute, so fun!"
+          </p>
+          <div class="review-name">— Crystal</div>
+        </article>
+
+        <article class="review-card">
+          <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p class="review-quote">
+            "Shipped fast and was great quality will be ordering again"
+          </p>
+          <div class="review-name">— Danielle</div>
+        </article>
+
+        <article class="review-card">
+          <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p class="review-quote">
+            "I love the anime design on the golden girls pretty nice 👍 I love it thanks"
+          </p>
+          <div class="review-name">— Joel</div>
+        </article>
+
+      </div>
+
+      <a
+        class="review-link"
+        href="https://pettysprintshop.etsy.com"
+        target="_blank"
+        rel="noopener noreferrer"
       >
+        See More on Etsy →
+      </a>
+
     </section>
 
     <!-- FOOTER -->
 
     <footer class="footer">
-
-      <strong>
-        Being petty has its perks. 💗
-      </strong>
-
-      <br>
-
-      Petty's Prints
-
+      <strong>Being petty has its perks. 💗</strong>
+      <p>Petty's Prints</p>
     </footer>
 
   </main>
